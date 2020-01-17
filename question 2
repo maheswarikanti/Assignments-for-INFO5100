@@ -1,0 +1,122 @@
+Desgin platform for buying tickets at local event
+
+-------------------------------------------------------------
+
+Class: User
+Data: name, phone, email, event
+
+loginApp() {
+App.login(email);
+}
+
+bookTicket() {
+if(CreditCard.cardAvaliable())
+App.book(this.data)
+   else
+Error;
+}
+
+review() {
+System.out.print(this.ticket)
+}
+
+contactSupport() {
+SupportService.call(event.ticket)
+}
+
+cancel() {
+App.cancelTicket();
+}
+-----------------------------------------------------------------------------
+
+Class: App
+Data: Status
+Behavior:
+
+login(email) {
+if((email && password) is valid)
+{
+Status = true;
+}
+else
+{
+status = false;
+}
+}
+
+book(user.data) {
+list info;
+info.add(SeatSelection.findSeat(user.data))
+info.add(user.data)
+info.add(Organisar.data)
+User.Ticket = info;
+}
+
+cancelTicket() {
+alert(user)
+alert(organizer)
+user.ticket = null
+organiser.seat = avaliable
+}
+
+-----------------------------------------------------------------------------
+
+Class: Organiser
+Data: name, phone, event, eventlocation, eventdetails
+Behivour:
+confirmTicket(eventlocation) {
+system.out.print(eventlocation);
+if(confirm) return true;
+else return false;
+}
+
+contactUser() {
+SupportService.call(event.ticket)
+}
+
+------------------------------------------------------------------------------
+
+Class: CreditCard
+Data: type. bankName, cardNumber, address, securityCode, expireDate
+Behaviour:
+cardAvaliable() {
+Date currentdate = new Date();
+if(currentDate less than (expireDate))
+{
+return true;
+}
+else
+{
+return false;
+}
+}
+
+------------------------------------------------------------------------------
+
+Class: SeatSelection
+Data: Seatnumber, seatrow
+findseat(userselection) {
+List seatlist;
+foreach(seat in seatlist) {
+if(userSelection is true && Organiser.confirmTicket(eventlocation) is true)
+{
+user.seatnumber = Seatnumber
+user.seatrow = Seatrow
+}
+else
+{
+user.seatnumber = null
+user.seatrow = null
+}
+}
+return user.seatnumber, user.seatrow;
+}
+
+-----------------------------------------------------------------------------
+
+Class: Supportservice
+Data:
+Behaviour:
+call(number) {
+phoneCallAPI.call(number);
+}
