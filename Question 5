@@ -1,0 +1,62 @@
+
+2. Order Pizza From Dominos
+
+Store
+Data: Address,Phone number, menu, 
+Behaviour: receive order, process order,deliver,refund, review,
+
+Dominos 
+Data: phone number, email id
+Behaviour: delivery, verify user, verify store, enable menu, authorise user, menu, customised menu,
+
+Customer
+Data: username, password, address, phone number
+Behaviour: create account, place order from menu,receieve order, review.
+
+
+Customer Mahi
+
+
+Mahi.loginToDominosAccount:authorise
+
+if(authorise is true)
+ 
+    mahi.selectStoreLocation
+  loop
+    mahi.browsemenu,orderpizza
+
+    if mahi.wantsToCustomise->makeYourOwnPizza
+        mahiChooseFromCustomiseMenu,dominosStore:CustomiseMenu
+        store.showCustomiseMenu,menu
+    end
+    mahi.addPizzaToCart->dominos.Store:addedToCart
+
+   if mahi.wantsToAddAnotherItem
+       mahi.addItemToCart->dominos
+   else
+   end
+
+   mahi.paymentMethod->dominos,store:cash,creditcard,debitcard
+
+if  mahi.wantsToPayByCard
+    mahi.enterCardDetails->Dominos
+
+else 
+    mahi.wantsToPayByCash
+    mahi.cashOnDelivery->dominos
+
+end
+
+    orderrecieved->customer
+
+end
+
+else  
+  signupAsNewUser
+
+else
+
+  mahi.ContinueAsGuest
+
+end
+ 
