@@ -1,0 +1,129 @@
+Desgin app to book doctor appointment using medical insurance provider
+
+-------------------------------------------------------------
+
+Class: Patient
+Data: name, phone, email, illness, location
+
+loginApp() {
+	InsuranceApp.login(email);
+}
+
+bookAppointment() {
+if(CreditCard.cardAvaliable())
+	InsuranceApp.book(InsuranceApp.Getdoctor(illness,location))
+   else
+	Error;	
+}
+
+cancelAppointment() {
+	cancelAppointment(InsuranceApp.Getdoctor(illness,location))	
+}
+
+review() {
+	System.out.print(Appointment)
+}
+
+contactSupport() {
+	SupportService.call(Hospital.phone)
+}
+
+
+-----------------------------------------------------------------------------
+
+Class: InsuranceApp
+Data: Status
+Behavior:
+
+login(email) {
+	if((email && password) is valid)
+	{
+		Status = true;
+	}
+	else
+	{
+		status = false;
+	}
+}
+
+bookAppointment(user.data) {
+	list Docinfo;
+	Docinfo.add(scheduleTime)
+	Docinfo.add(Specilization)
+Patient.Appointment= Docinfo;
+Slotslection.timeslot(DocInfo)
+}
+
+getDoctor(illness, location)	{
+foreach(doctor in doctors) {
+	if(doctor treat illness and location closeby){
+		return doctor
+	}else {return null}
+    }
+}
+
+cancelAppointment() {
+	alert(Patient)
+	alert(Doctor)
+	Patient.Appointment = null
+	Doctor.Slot = avaliable
+}
+
+-----------------------------------------------------------------------------
+
+Class: Doctor': name, phone, event, eventlocation, eventdetails
+Behivour:
+confirmAppointment(eventlocation) {
+	system.out.print(Patient and hospital info);
+	if(confirm) return true;
+	else return false;
+}
+
+contactPatient() {
+	SupportService.call(Patient.phone)
+}
+	
+------------------------------------------------------------------------------
+
+Class: CreditCard
+Data: type. bankName, cardNumber, address, securityCode, expireDate
+Behaviour:
+cardAvaliable() {
+	Date currentdate = new Date();
+	if(currentDate less than (expireDate))
+	{ 
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+------------------------------------------------------------------------------
+
+Class: SlotSelection
+Data: timeSlot, location
+findslot(DocSelection) {
+	List slotlist;
+	foreach(slot in openslotlist) {
+		if(slotSelection is true && Doctor.confirmAppointment is true)
+		{
+			user.slotnumber = Seatnumber
+		}
+		else 
+		{
+			patient.slotnumber = null
+		}
+}
+return patient.slotnumber;
+}
+
+-----------------------------------------------------------------------------
+
+Class: Supportservice
+Data:
+Behaviour:
+call(number) {
+	phoneCallAPI.call(number);
+}
