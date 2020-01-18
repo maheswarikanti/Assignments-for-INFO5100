@@ -1,0 +1,107 @@
+Desgin Job Searching Platform
+
+-------------------------------------------------------------
+
+Class: Employee
+Data: name, phone, email, Skill, Preferences
+Behaviour
+loginApp() {
+	App.login(email);
+}
+
+applyJob() {
+if(Search.JobsAvaliable(this.skill, this.preference))
+	App.ApplyJob(Employee.data, App.openposition(Employee.skill, Employee.preference))
+   else
+	System.out.print("No jobs avaliable for employee skillset");	
+}
+
+addSkillSet() {
+	App.AddSkills(this.skills)
+}
+
+contactSupport() {
+	SupportService.call(app.admin)
+}
+
+
+-----------------------------------------------------------------------------
+
+Class: App
+Data: Status
+Behavior:
+
+login(email) {
+	if((email && password) is valid)
+	{
+		Status = true;
+	}
+	else
+	{
+		status = false;
+	}
+}
+
+Applyjob(employee.data, employer.openpositions()) {
+	list Employeeinfo;
+	Employeeinfo.add(Employee.Skillset)
+	Employeeinfo.add(user.data)
+	boolean submitted  = SubmitJob(Employeeinfo.add, openpositions)
+}
+
+OpenPositions(skill , preference) {
+	if(Employer.skill is equal employee.skill and Employer.Preference is equal to employee.preference)
+	{
+		return openpositions;
+	}
+	else
+	{
+		return null;
+	}
+}
+
+-----------------------------------------------------------------------------
+
+Class: Employer
+Data: name, phone, skillSet, Jobs, location, salary
+Behivour:
+openPositions() {
+	`list JobInfo;
+	 JobsInfo.add(Skillset)
+	 JobsInfo.add(Location)
+	 JobsInfo.add(Salary)
+	 return JobsInfo
+}
+
+contactEmployee() {
+	SupportService.call(Employee.Phone)
+}
+	
+------------------------------------------------------------------------------
+
+
+Class: Search
+Data: Skillset, Loaction
+JobsAvaliable(skillset, Preference) {
+	List Joblist;
+	foreach(Job in jobs) {
+		if(Skillset and Preference matches)
+		{
+			Joblist.add(Job)
+		}
+		else 
+		{
+			
+		}
+}
+return JobList;
+}
+
+-----------------------------------------------------------------------------
+
+Class: Supportservice
+Data:
+Behaviour:
+call(number) {
+	phoneCallAPI.call(number);
+}
