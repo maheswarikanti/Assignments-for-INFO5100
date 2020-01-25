@@ -1,0 +1,134 @@
+static void getOccuringChar(String str, char ch) 
+    {  
+        int len = str.length(); 
+	int count = 0;
+        // Create an array of given String size
+        for (int i = 0; i < len; i++) {  
+            // If any matches found 
+            if (str.charAt(i) == ch)  
+                  count++;                
+        } 
+	System.out.println("Number of Occurrence of " + 
+                   ch + " is:" + count);  
+    } 
+    ------------------------------------------------------------------------
+    public static int getMinMaxValue(int[] numbers){
+  int maxValue, minValue = numbers[0];
+  for(int i=1;i < numbers.length;i++){
+    if(numbers[i] > maxValue){
+	  maxValue = numbers[i];
+	}
+  }
+  for(int i=1;i<numbers.length;i++){
+    if(numbers[i] < minValue){
+	  minValue = numbers[i];
+	}
+  }
+  return minValue, maxValue;
+}
+
+-----------------------------------------------------------------------
+
+public static int getMaxValue(int[] numbers){
+  int maxValue = numbers[0];
+  for(int i=1;i < numbers.length;i++){
+    if(numbers[i] > maxValue){
+	  maxValue = numbers[i];
+	}
+  }
+  return maxValue;
+}
+public static int getMinValue(int[] numbers){
+  int minValue = numbers[0];
+  for(int i=1;i<numbers.length;i++){
+    if(numbers[i] < minValue){
+	  minValue = numbers[i];
+	}
+  }
+  return minValue;
+  
+  -----------------------------------------------------------------------
+      public int addDigits(int input) 
+    { 
+        int sum = 0; 
+  
+        // Loop to do sum while 
+        // sum is not less than or equal to 9 
+
+        while (input > 0 || sum > 9)  
+        { 
+            if (input == 0) { 
+                input = sum; 
+                sum = 0; 
+            } 
+            sum = sum + input % 10; 
+            input = input/10; 
+        } 
+        return sum; 
+    } 
+--------------------------------------------------------------------------
+public double socialSecurityTax(Employee employee) {
+	        int salary;
+		double socialSecurityTax;
+		monthlySalary = employee.getAnnualSalary()/12;
+		if(monthlySalary <= 8900)
+		{
+			return socialSecurityTax = (monthlySalary * 6.2)/100;
+		}
+		else
+		{
+			return socialSecurityTax = (106800 * 6.2)/100;
+		}
+	    }
+
+public static double insuranceCoverage(Employee employee) {
+	       int salary, age;
+	       double insuranceContribution;
+	       monthlySalary = employee.getAnnualSalary()/12;
+	       age = employee.getAge();
+	       if(age < 35)
+	       { return insuranceContribution = (monthlySalary * 3)/100;}
+	       else if(age >= 35 && age <= 50)
+	       { return insuranceContribution = (monthlySalary * 4)/100;}
+	       else if(age > 50 && age < 60)
+	       { return insuranceContribution = (monthlySalary * 5)/100;}
+	       else if(age >= 60)
+	       { return insuranceContribution = (monthlySalary * 6)/100;}
+	    }
+
+public void sortSalary(Employee e1, Employee e2, Employee e3) {
+		Employee a[] = new Employee []{e1, e2, e3};
+		Employee temp[10];
+		// Insert arr[1] 
+    		if (arr[1].salary < arr[0].salary) 
+        	{ 
+            		temp[0] = arr[0]; 
+            		arr[0] = arr[1]; 
+            		arr[1] = temp[0]; 
+        	} 
+  
+    		// Insert arr[2] 
+    		if (arr[2].salary < arr[1].salary) 
+    		{ 
+            		temp[0] = arr[1]; 
+            		arr[1] = arr[2]; 
+            		arr[2] = temp[0]; 
+              
+    		if (arr[1].salary < arr[0].salary) 
+        	{ 
+            		temp[0] = arr[0]; 
+            		arr[0] = arr[1]; 
+            		arr[1] = temp[0]; 
+        	} 
+		for (int i= 0; i<arr.length-1; i++)
+		{
+			system.out.print(arr[i].name + " ")
+		}
+    }
+
+---------------------------------------------------------------------------
+Extra Credit - 
+When we pass object references to methods, Java creates a copy of references and passes it to the method, but they still point to same memory reference. 
+This means object from calling method and its reference will remain unaffected.
+	
+
